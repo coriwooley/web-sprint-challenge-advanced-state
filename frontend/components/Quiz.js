@@ -26,14 +26,14 @@ export function Quiz(props) {
             <h2>{quiz.question}</h2>
 
             <div id="quizAnswers">
-              <div className={`${selectAnswer === quiz.answers[0].answer_id ? 'answer selected' : 'answer'}`}>
+              <div className={`${selectedAnswer === quiz.answers[0].answer_id ? 'answer selected' : 'answer'}`}>
                 {quiz.answers[0].text}
                 <button onClick={() => handleClick(quiz.answers[0].answer_id)}>
                   {selectedAnswer === quiz.answers[0].answer_id ? 'SELECTED' : 'Select'}
                 </button>
               </div>
 
-              <div className={`${selectAnswer === quiz.answers[1].answer_id ? 'answer selected' : 'answer'}`}>
+              <div className={`${selectedAnswer === quiz.answers[1].answer_id ? 'answer selected' : 'answer'}`}>
                 {quiz.answers[1].text}
                 <button onClick={() => handleClick(quiz.answers[1].answer_id)}>
                   {selectedAnswer === quiz.answers[1].answer_id ? 'SELECTED' : 'Select'}

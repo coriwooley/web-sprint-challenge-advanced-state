@@ -60,8 +60,8 @@ export function postAnswer({quiz_id, answer_id}) {
     .then(res => {
       dispatch(selectAnswer(null))
       dispatch(setQuiz(null))
-      dispatch(setMessage(res.data.message))
       dispatch(fetchQuiz())
+      dispatch(setMessage(res.data.message))
     })
     .catch(err => {
       console.log(err)
@@ -76,7 +76,7 @@ export function postQuiz({question_text, true_answer_text, false_answer_text}) {
   return function (dispatch) {
     axios.post('http://localhost:9000/api/quiz/new', {question_text, true_answer_text, false_answer_text})
     .then(res => {
-      dispatch(setMessage(`"${res.data.question}" is a good question!!!`))
+      dispatch(setMessage(`Congrats: "${res.data.question}" is a great question!`))
       dispatch(resetForm())
     })
     .catch(err => {
