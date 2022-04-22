@@ -10,23 +10,24 @@ import {
   RESET_FORM,
 } from "./action-types";
 
-const initialWheelState = 0;
+const initialWheelState = 0
 function wheel(state = initialWheelState, action) {
-  switch (action.type) {
-    case MOVE_COUNTERCLOCKWISE:
-      {
-        state === 5 ? (state = 0) : state + 1;
-      }
-      break;
+  switch(action.type){
     case MOVE_CLOCKWISE:
-      {
-        state === 0 ? (state = 5) : state - 1;
+      if(state===5) {
+        return (state = 0)
+      } else {
+        return state + 1
       }
-      break;
+    case MOVE_COUNTERCLOCKWISE:
+      if(state===0){
+        return (state = 5)
+      } else {
+        return state - 1
+      }
     default:
-      return state;
+      return state
   }
-  return state;
 }
 
 const initialQuizState = "";

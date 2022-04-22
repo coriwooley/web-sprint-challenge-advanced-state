@@ -11,12 +11,12 @@ import {
  import axios from "axios"
 
 // ❗ You don't need to add extra action creators to achieve MVP
-export function moveClockwise() {
-  return{type: MOVE_CLOCKWISE}
+export function moveClockwise(value) {
+  return{type: MOVE_CLOCKWISE, payload:value}
 }
 
-export function moveCounterClockwise() {
-  return{type:MOVE_COUNTERCLOCKWISE}
+export function moveCounterClockwise(value) {
+  return{type:MOVE_COUNTERCLOCKWISE, payload:value}
 }
 
 export function selectAnswer(id) {
